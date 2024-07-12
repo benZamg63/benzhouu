@@ -1,0 +1,228 @@
+/*
+ *
+ *  Main css file. to be embedded into every page directly.
+ *
+ */
+ :root {
+    --wi: 80ch;       /*max width*/
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #1F1F1F;  /*normal*/
+        --nm: #CCCCCC;  /*background*/
+        --li: #6D7681;  /*light*/
+        --ac: #6A9956;  /*accent*/
+    }
+}
+
+::selection {
+  color: var(--ac);
+  background-color: var(--li);
+}
+
+body {
+  padding: 4rem 1rem 1rem;
+  color: var(--nm);
+  background-color: var(--bg);
+  font-family: monospace;
+  font-size: 1rem;
+}
+header,
+main,
+footer {
+  max-width: var(--wi);
+  margin: auto;
+  word-wrap: break-word;
+}
+
+main {
+  padding-bottom: 8rem;
+  padding-top: 4rem;
+}
+
+hgroup {
+  padding-top: 6rem;
+  margin-bottom: 5rem;
+}
+
+footer {
+  padding-top: 1rem;
+  padding-bottom: 6rem;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-style: italic;
+  padding: 10px;
+  padding-left: 0px;
+}
+h1 {
+  margin-top: 1rem;
+}
+h2 {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+h1, h2 {
+  /* background-color: var(--ac); */
+  /* color: var(--bg); */
+  /* width: fit-content; */
+  /* padding: 0px 10px; */
+}
+
+h1::before,
+h2::before
+{
+  color: var(--li);
+  content: "% ";
+}
+p {
+    line-height: 1.5rem;
+}
+a {
+    color: var(--ac);
+}
+a:hover {
+  text-decoration: none;
+  background-color: var(--ac);
+  color: var(--bg);
+}
+.list-item a:hover,
+h1 a:hover,
+h2 a:hover {
+  background-color: var(--bg); 
+  color: var(--ac);
+}
+em, a {
+  font-weight: medium;
+}
+h1 > a {
+  text-decoration: none;
+}
+nav > a {
+  font-weight: bold;
+  padding: 5px;
+}
+img {
+    width: 100%;
+    height: auto;
+    max-width: var(--wi);
+    border-radius: 10px;
+}
+span {
+  color: var(--li);
+  font-weight: bolder;
+}
+p span::before, p span::after {
+  content: " //"
+}
+li {
+  margin: 10px;
+  color: var(--li);
+  list-style-type: " # ";
+}
+
+/* li::before {
+  content: "*";
+} */
+hr {
+  color: var(--li);
+  border-style: dashed;
+}
+
+main hr {
+  border: none;
+}
+
+main hr::before {
+  content: '* * *';
+  display: block;
+  text-align: center;
+}
+
+pre {
+  margin: 0;
+	margin: 20px auto;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  padding: 10px;
+  border: 1px solid var(--li);
+  border-radius: 10px;
+	color: var(--ac);
+}
+
+#list:hover .list-item:hover {
+  opacity: 1;
+  border-left: 24px solid var(--ac);
+}
+
+#list:hover .list-item {
+  opacity: .3;
+  border-left: 4px solid var(--bg);
+}
+
+/* #list > div > a::before {
+  content: ":: ";
+} */
+
+#list > div > span::before {
+  content: "// ";
+}
+
+
+.list-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 4px solid var(--li);
+  padding: 20px;
+  /* margin-top: 15px; */
+  transition: opacity .25s ease;
+  transition: border-left .5s ease;
+}
+
+.list-item a {
+  text-decoration: none;
+}
+
+input {
+    background-color: var(--bg);
+    width: 35%;
+    font-size: 1rem;
+    font-family: monospace;
+    border: none;
+    color: var(--nm);
+}
+
+textarea {
+    background-color: var(--bg);
+    width: 72%;
+    font-size: 1rem;
+    font-family: monospace;
+    border: none;
+    color: var(--nm);
+    resize: none;
+}
+
+button {
+  font-size: 1rem;
+  font-family: monospace;
+  background-color: var(--bg);
+  border: none;
+  color: var(--ac);
+}
+
+button:hover {
+  cursor: pointer;
+  opacity: 1;
+  border-left: 130px solid var(--ac);
+  transition: border-left 5s ease;
+}
+
+button:not(:hover) {
+  border-left: 4px solid;
+  transition: border-left 7.5s ease;
+}
